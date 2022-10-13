@@ -8,6 +8,7 @@
   </head>
   <body>
         
+        <?php include "../includes/header.php"; ?>
             
        <center><h3>Admin</h3></center>
                   
@@ -19,7 +20,7 @@
            <div>  
              <button ahref="AdCreate.php"> Delete Admin </button>
             </div> 
-      
+      <?php include "../includes/footer.php"; ?>
   
 	
   </body>
