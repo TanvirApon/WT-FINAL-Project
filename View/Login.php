@@ -8,6 +8,13 @@
 
   <body>      
 
+     <?php 
+
+     include "../includes/header.php";
+
+     ?>
+
+
         <center>
 
          <fieldset>
@@ -51,6 +58,10 @@
        </form>
        </center>
        </fieldset>
+
+  <?php include "../includes/footer.php"; ?>
+
+
   </body>
 
 </html>  

@@ -8,6 +8,9 @@
 
   <body>      
 
+ <?php include "../includes/header.php" ;?>
+
+
        <fieldset>
 
 
@@ -97,6 +100,10 @@
        </center>
        
        </fieldset>
+
+ <?php include "../includes/footer.php"; ?>
+
+
   </body>
 
 </html>  
