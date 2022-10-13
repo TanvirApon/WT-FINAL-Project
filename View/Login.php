@@ -10,7 +10,8 @@
 
         <center>
 
-          <h3> Login Here </h3>
+         <fieldset>
+          <h3> <u>Login Here</u> </h3>
 
           <form action="" method="post">
 
@@ -19,20 +20,20 @@
 
               <!-- Login--->
                <tr>
-                   <td>Username:</td>
+                   <td><label><b>Email:</b></label></td>
                 <td>
-                  <input type="text" name="user">
+                  <input type="text" name="user" required>
                 </td>
               </tr>
-                
 
               <!--Password-->
                   <tr>
-                     <td>Password:</td>
+                     <td><label><b>Password:</b></label></td>
                    <td>
-                    <input type="password" name="pass">
+                    <input type="password" name="pass" required>
                    </td>
                  </tr>
+  
 
                <!--Submit-->
                   <tr>
@@ -40,7 +41,7 @@
                     <input type="submit" name="submit" value="Login">
                    </td>
                     <td>
-                     Not yet a Member?<a href="Register.html">Register</a>
+                     Not yet a Member?<a href="Register.php">Register</a>
                    </td>
                    
                  </tr>
@@ -49,7 +50,7 @@
 
        </form>
        </center>
-       
+       </fieldset>
   </body>
 
 </html>  
