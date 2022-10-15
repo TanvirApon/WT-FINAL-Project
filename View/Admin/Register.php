@@ -8,7 +8,7 @@
 
   <body>      
 
- <?php include "../includes/header.php" ;?>
+ <?php include "../../includes/header.php" ;?>
 
 
        <fieldset>
@@ -101,7 +101,7 @@
        
        </fieldset>
 
- <?php include "../includes/footer.php"; ?>
+ <?php include "../../includes/footer.php"; ?>
 
 
   </body>
