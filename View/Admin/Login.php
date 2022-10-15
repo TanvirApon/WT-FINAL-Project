@@ -10,7 +10,7 @@
 
      <?php 
 
-     include "../includes/header.php";
+     include "../../includes/header.php";
 
      ?>
 
@@ -18,7 +18,7 @@
         <center>
 
          <fieldset>
-          <h3> <u>Login Here</u> </h3>
+          <legend> Login Here </legend>
 
           <form action="" method="post">
 
@@ -59,7 +59,7 @@
        </center>
        </fieldset>
 
-  <?php include "../includes/footer.php"; ?>
+  <?php include "../../includes/footer.php"; ?>
 
 
   </body>
