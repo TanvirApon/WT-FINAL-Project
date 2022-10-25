@@ -8,13 +8,13 @@
   </head>
   <body>
         
-         <?php include "../../includes/header.php"; ?>
+         <?php include "Header.php"; ?>
        
 
       <!---Admin -->
 
        
-       <legend>Admin</legend>
+       <h3><u>Admin</u></h3>
                  
        <a href="Register.php">Create Admin</a>
                        
@@ -69,7 +69,7 @@
 
        <!---Seller -->
 
-       <h3>Seller</h3>
+       <h3><u>Seller</u></h3>
                  
        <a href="Register.php">Create Seller</a>
                        
@@ -95,7 +95,7 @@
 
       <!---Employee -->
 
-       <h3>Employee</h3>
+       <h3><u>Employee</u></h3>
                  
        <a href="Register.php">Create Employee</a>
                        
@@ -123,7 +123,7 @@
 
 
 
-      <?php include "../../includes/footer.php"; ?>
+      <?php include "Footer.php"; ?>
   
 	
   </body>

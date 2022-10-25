@@ -18,15 +18,16 @@
         $password=senitize($password);
         
 
-       $val= read("../../Models/Admin/Admin.json");
-        $dec= json_decode($readValue,true);
+       $val= file_get_contents("../../Model/Admin.json");
+       $dec= json_decode($val,true);
 
         for($i=0; $i <count($dec); $i++)
         {
-             if($username == $dec[$i]["username"] && $password == $dec[$i]["password"] )
+             if($email == $dec[$i]["email"] && $password == $dec[$i]["password"] )
              {
               
-                header("Location: ../../View/Admin/Admin.php");
+                //echo "login Successful";
+                header("Location: ../../View/Admin/Profile.php");
                 break;
              }
         }
