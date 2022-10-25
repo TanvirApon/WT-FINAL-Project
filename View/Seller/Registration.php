@@ -9,7 +9,7 @@
 	<?php include "Header.php"; ?>
     <?php include "Nav.php"; ?>
 
-	<form action="Login.php">
+	<form action="RegisterAction.php" method="post">
 		<center>
 			
 			<fieldset style="text-align:center; height: 75%; width: 40%; bottom: 35%;">
@@ -31,6 +31,9 @@
 		<input type="password" name="password" id="password"><br><br>
 		<label for="cpassword">Confirm Password:</label>
 		<input type="password" name="cpassword" id="cpassword"><br><br>
+
+		<label for="ques">Where is your BirthPlace?</label>
+		<input type="text" name="ques" id="ques"><br><br>
 
 		<input type="submit" name="signin" value="Sign In"><br><br>
 		Already Have an Account?<a href="Login.php">Login Here</a>

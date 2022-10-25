@@ -1,44 +1,87 @@
 <?php
 if($_SERVER['REQUEST_METHOD']==='POST')
 {
-	$isValid= true;
+  
+   if(htmlspecialchars($_SERVER['REQUEST_METHOD']==="POST"))
+   {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+   }
+
+if (empty($email)||empty($password))
+{
 
 
-	if(empty($_POST['email']))
-		{ echo "Please fill up the email";
-		 $isValid=false;	
-		}
+  echo "Field is required";
 
-	else
-	{
-		if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-		{
-			echo "Please Correct your Email";
-			$isValid = false;
-		}
 
-	}
-	if(empty($_POST['password']))
-		{ echo "Please fill up the password Properly";
-		 $isValid=false;	
-		}
-
-		if($isValid)
-		{
-			echo "Email: ".sanitize($_POST['email']);
-			echo "<br>";
-			echo "Password: ".sanitize($_POST['password']);
-		}
-		/*else
-		{
-			header("Location: Login.php");
-		}*/
-		else
-		{
-			header("Location: Error.php");
-		}
 }
 
+else 
+{
+
+
+   $email=sanitize($email);
+   $password=sanitize($password);
+
+
+  // $file=fopen("data.json","r+");
+   $file = file_get_contents('data.json');
+
+    $dec=json_decode($file,true);
+
+
+   for($i=0;$i<count($dec);$i++){
+
+   if($email==$dec[$i]["Email"] && $password==$dec[$i]["Password"] )
+
+   {
+
+
+   	  session_start();
+
+	if(isset($_REQUEST['submit'])){
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+
+		if( $username != null &&  $password != null){
+
+			$user = $_SESSION['user'];
+			if($user['username'] == $username && $user['password'] == $password){
+				$_SESSION['status'] = true;
+				header('location: home.php');
+			}else{
+				echo "invalid user";
+			}
+		}else{
+			echo "null submission";
+		}
+	}
+
+
+
+
+
+
+
+   }
+
+  
+
+
+
+ 
+
+
+}
+
+}
+
+}
+
+  
 function sanitize($data)
 {
 	$data=trim($data);
@@ -47,4 +90,6 @@ function sanitize($data)
 	return $data;
 
 }
+
+
 ?>
