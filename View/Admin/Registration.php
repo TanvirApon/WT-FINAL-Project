@@ -9,7 +9,7 @@
   <?php include "Header.php"; ?>
   <?php include "Nav.php"; ?>
 
-  <form action="../../Controllers/Register.php" method="POST">
+  <form action="../../Controllers/Admin/Register.php" method="POST">
     <center>
       
       <fieldset style="text-align:center; height: 75%; width: 40%; bottom: 35%;">

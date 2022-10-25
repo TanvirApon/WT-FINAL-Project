@@ -37,18 +37,18 @@
         else{
 
           
-           $file = fopen("../Model/Admin/Admin.json", "r"); 
+           $file = fopen("../../Model/Admin.json", "r+"); 
 
           $data = "";
 
-    if (filesize("../Model/Admin/Admin.json") > 0) {
+    if (filesize("../../Model/Admin.json") > 0) {
 
-    $data = fread($file, filesize("../Model/Admin/Admin.json"));
+    $data = fread($file, filesize("Admin.json"));
  }
 
  fclose($file);
 
- $file = fopen("../Model/Admin/Admin.json", "w");  
+ $file = fopen("../../Model/Admin.json", "w+");  
 
  if (empty($data)) {
     $content = array(array( "$fname", "lname" => "$lname", "gender" => $gender, "email" => $email, "password" => $password, "cpassword" => $cpassword ));   

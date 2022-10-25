@@ -8,7 +8,7 @@
 <body>
  <?php include "Header.php"; ?>
  <?php include "Nav.php"; ?>
-  <form action="LoginAction.php" method="POST">
+  <form action="../../Login.php" method="POST">
     <center>
       
       <fieldset style="text-align:center; height: 200px; width: 250px;">
