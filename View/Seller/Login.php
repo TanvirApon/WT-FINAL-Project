@@ -21,11 +21,12 @@
 
 		<input type="submit" name="login" value="Login"><br><br>
 		Didn't Register yet?<a href="Registration.php">Register Here</a>
+		<a href="forgetPassword.php">Forgot Password</a>
 
 		</fieldset>
 		</center>
 	</form>
-	
+	<hr>
 <?php include "Footer.php"; ?>
 
 </body>
