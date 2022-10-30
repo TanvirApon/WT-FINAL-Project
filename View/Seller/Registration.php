@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+
+?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -9,7 +12,7 @@
 	<?php include "Header.php"; ?>
     <?php include "Nav.php"; ?>
 
-	<form action="RegisterAction.php" method="post">
+	<form action="../Controller/RegisterAction.php" method="post">
 		<center>
 			
 			<fieldset style="text-align:center; height: 75%; width: 40%; bottom: 35%;">
@@ -36,7 +39,7 @@
 		<input type="text" name="ques" id="ques"><br><br>
 
 		<input type="submit" name="signin" value="Sign In"><br><br>
-		Already Have an Account?<a href="Login.php">Login Here</a>
+		Already Have an Account?<a href="View/Login.php">Login Here</a>
 
 		</fieldset>
 		</center>

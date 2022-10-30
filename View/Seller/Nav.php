@@ -16,6 +16,7 @@
 <div align="center">
        <a href="Home.php">Home |</a>
        <a href="About.php"> About us |</a>
+       <a href="About.php"> Contact |</a>
        <a href="Login.php"> Sign In</a>
        <br>
 </div>
