@@ -52,32 +52,41 @@
          <th>Password</th>
          <th>BirthPlace</th>
                </tr>
+      <?php
+			
+			$data = file_get_contents('../../Model/admin.json');
+		
+			$data = json_decode($data,true);
+ 
 
-
-
-   <?php
-      $json_data = file_get_contents("../../Model/admin.json");
-      $files = json_decode($json_data, true);
-      if(count($files) != 0){
-            foreach ($files as $admin) {
-               ?>
-                  <tr>
-            
-                     <td> <?php echo $admin['FirstName']; ?> </td>
-                     <td> <?php echo $admin['LastName']; ?> </td>
-                     <td> <?php echo $admin['Email']; ?> </td>
-                     <td> <?php echo $admin['Password']; ?></td>
-                     <td> <?php echo $admin['Answer']; ?> </td>
-                     <td><a href="EditProduct.php">Edit  |</a>
-                        <a href="RemoveProduct.php"> Remove</a>
-
-                     </td>
-                     
-                  </tr>
-               <?php
+           if($data==null)
+           {
+             echo("No data found");
+           
+           
             }
-         }
-      ?>
+
+			  $index = 0;
+			foreach($data as $row){
+				echo "
+					<tr>
+						<td>".$row['FirstName']."</td>
+						<td>".$row['LastName']."</td>
+						<td>".$row['Email']."</td>
+						<td>".$row['Password']."</td>
+						<td>".$row['Answer']."</td>
+						<td>
+							<a href='AdminUpdate.php?index=".$index."'>Edit</a>
+							<a href='../../Controller/Admin/RemoveAdmin.php?index=".$index."'>Delete</a>
+						</td>
+					</tr>
+				";
+ 
+				$index++;
+			}
+      
+      
+		?>
    </table>
 
 </center>
