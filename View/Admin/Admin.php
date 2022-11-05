@@ -30,10 +30,10 @@
 <strong>User Profile</strong></h3><hr>
 <ul>
 
-  <li> <a href="../View/Profile.php">View Profile</a> </li>
-  <li> <a href="../View/EditProfile.php">Edit Profile</a> </li>
-  <li> <a href="../View/ChangePassword.php">Change Password</a> </li>
-  <li> <a href="../Controller/LogoutAction.php">Logout</a> </li>
+  <li> <a href="Showadmin.php">View Profile</a> </li>
+  <li> <a href="Showadmin.php">Edit Profile</a> </li>
+  <li> <a href="Showadmin.php">Change Password</a> </li>
+  <li> <a href="../../Controller/LogoutAction.php">Logout</a> </li>
 </ul> 
 </td>
 

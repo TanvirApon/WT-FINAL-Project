@@ -39,22 +39,18 @@ else
 	<td align ="middle"width= "25%"><h3><strong>User DashBoard</strong></h3><hr>
 
 <ul>
-  <li> <a href="AddProduct.php">Add Product</a> </li>
-  <li> <a href="../View/ViewAllProduct.php">Show all Products</a> </li>
-  <li> <a href="#">Sell Information</a> </li>
-  <li> <a href="#">Payment History</a> </li>
-  <li> <a href="../View/ContactAdmin.php">Contact Admin</a> </li>
-  <li> <a href="#">Give Feedback</a> </li>
+  <li> <a href="AddProduct.php">Add Admin</a> </li>
+  <li> <a href="../View/ViewAllProduct.php">Show all Admin</a> </li>
 </ul>  
 
 <br>
 <strong>User Profile</strong></h3><hr>
 <ul>
 
-  <li> <a href="../View/Profile.php">View Profile</a> </li>
-  <li> <a href="../View/EditProfile.php">Edit Profile</a> </li>
-  <li> <a href="../View/ChangePassword.php">Change Password</a> </li>
-  <li> <a href="../Controller/LogoutAction.php">Logout</a> </li>
+  <li> <a href="Profile.php">View Profile</a> </li>
+  <li> <a href="EditProfile.php">Edit Profile</a> </li>
+  <li> <a href="ChangePassword.php">Change Password</a> </li>
+  <li> <a href="../../Controller/LogoutAction.php">Logout</a> </li>
 </ul> 
 </td>
 
