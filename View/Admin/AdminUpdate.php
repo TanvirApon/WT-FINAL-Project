@@ -2,8 +2,8 @@
 	
     $index = $_GET['index'];
 	$data = file_get_contents('../../Model/admin.json');
-	$data= json_decode($data);
-	$row =($data[$index]);
+	$data_array= json_decode($data);
+	$row =($data_array[$index]);
  
 ?>
 
@@ -91,7 +91,12 @@
 
 <?php
 	if(isset($_POST['save'])){
-        //set the updated values
+
+          $handle = fopen("../../Model/admin.json", "r");
+	  $fr = fread($handle, filesize("../../Model/admin.json"));
+	  $arr1 = json_decode($fr);
+	  $fc = fclose($handle);
+          $handle = fopen("../../Model/admin.json", "w"); 
         $input = array(
             'FirstName' => $_POST['fname'],
             'LastName' => $_POST['lname'],
@@ -99,12 +104,19 @@
             'Password' => $_POST['password'],
             'Answer' => $_POST['question']
         );
- 
-        $data_array[$index] = $input;
+ for ($i = 0; $i < count($arr1); $i++) {
+			 {
+		$arr1[$i]->FirstName = $_POST['fname'];
+                $arr1[$i]->LastName = $ $_POST['lname'];
+                $arr1[$i]->Email = $_POST['email'];
+                $arr1[$i]->Password = $ $_POST['password'];
+                $arr1[$i]->Answer = $ $_POST['question'];
+		}
+	}
 
-        $data = json_encode($data_array, JSON_PRETTY_PRINT);
-        file_put_contents('../../Model/admin.json', $data);
- 
+		$data = json_encode($arr1);
+		$fw = fwrite($handle, $data);
+		$fc = fclose($handle);
         header('location: Showadmin.php');
     }
 

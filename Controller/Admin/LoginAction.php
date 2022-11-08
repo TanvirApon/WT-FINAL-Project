@@ -41,6 +41,7 @@ break;}
 }
 if($found===true)
 {
+ $_SESSION['email']==$email;
 header("Location:../../View/Admin/Dashboard.php");
 }
 else

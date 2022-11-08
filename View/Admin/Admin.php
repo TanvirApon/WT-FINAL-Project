@@ -1,3 +1,14 @@
+<?php
+
+if(!isset($_SESSION['email'])){
+
+  header("Location:Login.php");
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +72,12 @@
     <tr>
 		<td><label for="email">Email:</label></td>
 		<td><input type="text" name="email" id="email"></td>
+	</tr>
+
+
+    <tr>
+		<td><label for="user">UserID:</label></td>
+		<td><input type="text" name="user" id="user"></td>
 	</tr>
 
     <tr>
