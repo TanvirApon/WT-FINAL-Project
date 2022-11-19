@@ -1,10 +1,10 @@
 <?php 
 
 session_start();
-session_unset();
+$_session = array();
 session_destroy();
 
-header("Location:../View/Login.php");
+header("Location:../../View/Admin/Login.php");
 
 
 ?>

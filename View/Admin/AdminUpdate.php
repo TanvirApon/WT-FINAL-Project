@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-<?php
-	
-    $index = $_GET['index'];
-	$data = file_get_contents('../../Model/admin.json');
-	$data_array= json_decode($data);
-	$row =($data_array[$index]);
- 
-?>
 
-=======
->>>>>>> 2ecb83c (Updated with mysql)
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +15,7 @@
 </tr>
 
 <tr>
-	<td>Welcome,</td>
+	
 	<td><?php include "Nav.php"; ?></td>
 </tr>
 
@@ -42,9 +31,6 @@
 <strong>User Profile</strong></h3><hr>
 <ul>
 
-  <li> <a href="Showadmin.php">View Profile</a> </li>
-  <li> <a href="Showadmin.php">Edit Profile</a> </li>
-  <li> <a href="Showadmin.php">Change Password</a> </li>
   <li> <a href="../Controller/LogoutAction.php">Logout</a> </li>
 </ul> 
 </td>
@@ -127,49 +113,16 @@
 		<tr>
 		<td><input type="hidden" name="hidden_id" value="<?php echo $id;?>">
 		</tr>	
-		
-
 </table>
 </form>
 <?php
-<<<<<<< HEAD
-	if(isset($_POST['save'])){
-
-          $handle = fopen("../../Model/admin.json", "r");
-	  $fr = fread($handle, filesize("../../Model/admin.json"));
-	  $arr1 = json_decode($fr);
-	  $fc = fclose($handle);
-          $handle = fopen("../../Model/admin.json", "w"); 
-        $input = array(
-            'FirstName' => $_POST['fname'],
-            'LastName' => $_POST['lname'],
-            'Email' => $_POST['email'],
-            'Password' => $_POST['password'],
-            'Answer' => $_POST['question']
-        );
- for ($i = 0; $i < count($arr1); $i++) {
-			 {
-		$arr1[$i]->FirstName = $_POST['fname'];
-                $arr1[$i]->LastName = $ $_POST['lname'];
-                $arr1[$i]->Email = $_POST['email'];
-                $arr1[$i]->Password = $ $_POST['password'];
-                $arr1[$i]->Answer = $ $_POST['question'];
-		}
-	}
-
-		$data = json_encode($arr1);
-		$fw = fwrite($handle, $data);
-		$fc = fclose($handle);
-        header('location: Showadmin.php');
-    }
-=======
 
 		}
 	}
-}	
 
-   }
->>>>>>> 2ecb83c (Updated with mysql)
+}
+
+	 }
 
 ?>
 
