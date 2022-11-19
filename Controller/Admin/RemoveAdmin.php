@@ -1,39 +1,46 @@
 <?php
-
-
-if (isset($_GET['index'])) {
-            
-              $id = $_GET['index'];
-
-              $data = file_get_contents('../../Model/admin.json');
-              $data = json_decode($data);
+        
+              $servername="localhost";
+              $username="root";
+              $pass="";
+              $database="Shop";
  
-              unset($data[$id]);
+ $con =  new mysqli($servername,$username,$pass,$database);
+ 
 
-             
-            // $id = $_GET['index'];
-			// $handle = fopen("../Model/product.json", "r");
-			// $fr = fread($handle, filesize("../../Model/admin.json"));
-			// $arr1 = json_decode($fr);
-			// $fc = fclose($handle);
+ 
+	if($con->connect_error){
+	
+	 die("Connection Failed: ".$con->connect_error);
+ 
+	}
+	else {
 
-			 $handle = fopen("../../Model/admin.json", "w");
-			// $arr2 = array();
-			
-			// for ($i = 0; $i < count($arr1); $i++) {
-			// 	if ($id === $arr1[$i]->id) {
-			// 		array_push($arr2, $arr1[$i]);
-			// 	}
-			// }
+		if(isset($_REQUEST['id'])){
+			$id =$_REQUEST['id'];
+	 
+
+            $sql="DELETE FROM admin  WHERE id= '$id'";
+
+			echo $id;
+
+          if($con->query($sql)===TRUE){
+            
+			echo "Record Deleted Successfully";
+
+			header("Location:../../View/Admin/Showadmin.php");
+		  }
+		  else{
+             echo "Error Deleting Record: ".$con->error;
+      
+		  }
+
+
 		
+	}
 
-			 $data = json_encode($data);
-			 $fw = fwrite($handle, $data);
-			 $fc = fclose($handle);
-
-             header("Location:../../View/Admin/Showadmin.php");
-
-			
+              
+	$con->close();
 		
 }
             function senitize($data)

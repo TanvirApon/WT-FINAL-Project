@@ -46,6 +46,7 @@
 
 <table border="">
       <tr>
+	     <th>Id</th>
          <th>First Name</th>
          <th>Last Name</th>
          <th>Email</th>
@@ -53,40 +54,73 @@
          <th>BirthPlace</th>
                </tr>
       <?php
-			
-			$data = file_get_contents('../../Model/admin.json');
-		
-			$data = json_decode($data,true);
- 
+   
+     $servername="localhost";
+     $username="root";
+     $pass="";
+     $database="Shop";
+   
+     $con =  new mysqli($servername,$username,$pass,$database);
+   
+  
+   
+	  if($con->connect_error){
+	  
+	   die("Connection Failed: ".$con->connect_error);
+   
+	  }
 
-           if($data==null)
-           {
-             echo("No data found");
-           
-           
-            }
+	  else {
 
-			  $index = 0;
-			foreach($data as $row){
-				echo "
-					<tr>
-						<td>".$row['FirstName']."</td>
-						<td>".$row['LastName']."</td>
-						<td>".$row['Email']."</td>
-						<td>".$row['Password']."</td>
-						<td>".$row['Answer']."</td>
-						<td>
-							<a href='AdminUpdate.php?index=".$index."'>Edit</a>
-							<a href='../../Controller/Admin/RemoveAdmin.php?index=".$index."'>Delete</a>
+	  $sql="SELECT * FROM admin";
+	  $result=$con->query($sql);
+  
+      $count=mysqli_num_rows($result); 
+
+
+      if($count>0){
+
+      while($row=$result->fetch_assoc())
+	  {
+		 $id=$row['id'];
+		 $fname=$row['firstname'];
+		 $lname=$row['lastname'];
+         $email=$row['email'];
+		 $pass=$row['password'];
+		 $answer=$row['answer'];
+
+	?>
+		 			<tr>
+					    <td><?php echo $id; ?></td>
+		 				<td><?php echo $fname; ?></td>
+		 				<td><?php echo $lname; ?></td>
+		 				<td><?php echo $email; ?></td>
+		 				<td><?php echo $pass; ?></td>
+						 <td><?php echo $answer; ?></td>
+                        <td>
+						  <a href="AdminUpdate.php?id=<?php echo $id ?>">Edit</a>
+							<a href="../../Controller/Admin/RemoveAdmin.php?id=<?php echo $id?>">Delete</a>
+
 						</td>
-					</tr>
-				";
- 
-				$index++;
-			}
-      
-      
-		?>
+						
+	
+		 			</tr>
+			
+<?php
+
+      }
+
+ }
+
+}
+
+?>
+    
+
+
+	 		
+		
+		
    </table>
 
 </center>

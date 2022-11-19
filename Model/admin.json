@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"1":{"FirstName":"Nurul","LastName":null,"Email":"nurul@yahoo.com","User":"nurul","Password":null,"Answer":null},"2":{"FirstName":"Niloy","LastName":"Tanvir","Email":"Niloy@gmail.com","User":"120","Password":"123","Answer":""}}
+=======
+{"1":{"FirstName":"amin","LastName":"nurul","Email":"nurul@yahoo.com","Password":"123","Answer":"Comilla"}}
+>>>>>>> 2ecb83c (Updated with mysql)
