@@ -37,7 +37,8 @@ if($fz> 0)
 if($users[$i]->Email ===$email and $users[$i]->Password ===$password)
 {
 $found = true;
-break;}
+break;
+
 }
 if($found===true)
 {

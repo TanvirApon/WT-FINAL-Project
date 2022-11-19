@@ -74,12 +74,16 @@ if(!isset($_SESSION['email'])){
 		<td><input type="text" name="email" id="email"></td>
 	</tr>
 
+<<<<<<< HEAD
 
     <tr>
 		<td><label for="user">UserID:</label></td>
 		<td><input type="text" name="user" id="user"></td>
 	</tr>
 
+=======
+	
+>>>>>>> 2ecb83c (Updated with mysql)
     <tr>
 		<td><label for="password">Password:</label></td>
 		<td><input type="password" name="password" id="password"></td>

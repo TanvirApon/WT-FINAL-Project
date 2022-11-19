@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 	
     $index = $_GET['index'];
@@ -7,6 +8,8 @@
  
 ?>
 
+=======
+>>>>>>> 2ecb83c (Updated with mysql)
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,45 +54,85 @@
 	<td width="75%">
 <center>
       <h2><strong> Admin Update</strong></h2><hr>
+      <form action="../../Controller/Admin/update.php" method="POST" >
+	  <?php
+	$servername="localhost";
+	$username="root";
+	$pass="";
+	$database="Shop";
+	
+	$con =  new mysqli($servername,$username,$pass,$database);
+	
+	if($con->connect_error){
+		  
+		die("Connection Failed: ".$con->connect_error);
+	
+	   }
+	
+     else {
+		if(isset($_GET['id'])){
+		$id =$_GET['id'];
+        $sql="SELECT id,firstname,lastname,email,password,answer FROM admin WHERE id = '$id'";
+		$result=$con->query($sql);
+       
+		$count = mysqli_num_rows($result);
 
-      <form method="POST">
-      <table>
+		
+		if($count > 0)
+		{
+
+        while($row=$result->fetch_assoc()){
+
+ ?>  
+	  <table>
+		<tr>
+		<td><label for="id">Id:</label></td>
+		<td><input type="text" name="id" id="id" value="<?php echo $row['id'];?>"></td>
+
+	</tr>
+ 
+
 	<tr>
 		<td><label for="fname">First Name:</label></td>
-		<td><input type="text" name="fname" id="fname" value="<?php echo $row->FirstName;?>"></td>
+		<td><input type="text" name="fname" id="fname" value="<?php echo $row['firstname'];?>"></td>
 
 	</tr>
     <tr>
 		<td><label for="Lname">Last Name:</label></td>
-		<td><input type="text" name="lname" id="lname" value="<?php echo $row->LastName;?>"></td>
+		<td><input type="text" name="lname" id="lname" value="<?php echo $row['lastname'];?>"></td>
 
 	</tr>
 
     <tr>
 		<td><label for="email">Email:</label></td>
-		<td><input type="text" name="email" id="email" value="<?php echo $row->Email;?>"></td>
+		<td><input type="text" name="email" id="email" value="<?php echo $row['email'];?>"></td>
 	</tr>
 
     <tr>
 		<td><label for="password">Password:</label></td>
-		<td><input type="text" name="password" id="password" value="<?php echo $row->Password;?>"></td>
+		<td><input type="text" name="password" id="password" value="<?php echo $row['password'];?>"></td>
 	</tr>
 
    
 
     <tr>
 		<td><label for="question">Where is your birthpalce:</label></td>
-		<td><input type="text" name="question" id="question" value="<?php echo $row->Answer;?>"></td>
+		<td><input type="text" name="question" id="question" value="<?php echo $row['answer'];?>"></td>
 	</tr>
 
-<tr>
+    <tr>
 		<td><input type="submit" name="save" value="save">
+		</tr>	
+	
+		<tr>
+		<td><input type="hidden" name="hidden_id" value="<?php echo $id;?>">
+		</tr>	
 		
+
 </table>
 </form>
- 
-
 <?php
+<<<<<<< HEAD
 	if(isset($_POST['save'])){
 
           $handle = fopen("../../Model/admin.json", "r");
@@ -119,6 +162,14 @@
 		$fc = fclose($handle);
         header('location: Showadmin.php');
     }
+=======
+
+		}
+	}
+}	
+
+   }
+>>>>>>> 2ecb83c (Updated with mysql)
 
 ?>
 
