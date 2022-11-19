@@ -1,12 +1,3 @@
-<?php
-
-if(!isset($_SESSION['email'])){
-
-  header("Location:Login.php");
-
-}
-
-?>
 
 
 <!DOCTYPE html>
@@ -25,7 +16,6 @@ if(!isset($_SESSION['email'])){
 </tr>
 
 <tr>
-	<td>Welcome, @</td>
 	<td><?php include "Nav.php"; ?></td>
 </tr>
 
@@ -41,10 +31,7 @@ if(!isset($_SESSION['email'])){
 <strong>User Profile</strong></h3><hr>
 <ul>
 
-  <li> <a href="Showadmin.php">View Profile</a> </li>
-  <li> <a href="Showadmin.php">Edit Profile</a> </li>
-  <li> <a href="Showadmin.php">Change Password</a> </li>
-  <li> <a href="../../Controller/LogoutAction.php">Logout</a> </li>
+   <li> <a href="../../Controller/Admin/LogoutAction.php">Logout</a> </li>
 </ul> 
 </td>
 
@@ -74,16 +61,6 @@ if(!isset($_SESSION['email'])){
 		<td><input type="text" name="email" id="email"></td>
 	</tr>
 
-<<<<<<< HEAD
-
-    <tr>
-		<td><label for="user">UserID:</label></td>
-		<td><input type="text" name="user" id="user"></td>
-	</tr>
-
-=======
-	
->>>>>>> 2ecb83c (Updated with mysql)
     <tr>
 		<td><label for="password">Password:</label></td>
 		<td><input type="password" name="password" id="password"></td>

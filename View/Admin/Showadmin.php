@@ -14,7 +14,6 @@
 </tr>
 
 <tr>
-	<td>Welcome,</td>
 	<td><?php include "Nav.php"; ?></td>
 </tr>
 
@@ -30,10 +29,7 @@
 <strong>User Profile</strong></h3><hr>
 <ul>
 
-  <li> <a href="../View/profile.php">View Profile</a> </li>
-  <li> <a href=../View/EditProfile.php>Edit Profile</a> </li>
-  <li> <a href="../View/ChangePassword.php">Change Password</a> </li>
-  <li> <a href="../Controller/LogoutAction.php">Logout</a> </li>
+  <li> <a href="../../Controller/Admin/LogoutAction.php">Logout</a> </li>
 </ul> 
 </td>
 

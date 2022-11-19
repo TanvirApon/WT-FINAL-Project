@@ -1,19 +1,3 @@
-<?php 
-
-/*session_start();
-
-if(isset($_SESSION['email']))
-{
-	header("Location: ../View/Dashboard.php");
-	
-}
-else
-{
-	header("Location:../View/Login.php");
-}*/
-?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +15,6 @@ else
 </tr>
 
 <tr>
-	<td>Welcome,</td>
 	<td><?php include "Nav.php"; ?></td>
 </tr>
 
@@ -43,17 +26,13 @@ else
   <li> <a href="Employee.php">Employee</a> </li>
   <li> <a href="../Seller/AddProduct.php">Product</a> </li>
   <li> <a href="Seller.php">Seller</a> </li>
-  <li> <a href="Buyer.php">Buyer</a> </li>
-</ul>  
+  </ul>  
 
 <br>
 <strong>User Profile</strong></h3><hr>
 <ul>
 
-  <li> <a href="Showadmin.php">View Profile</a> </li>
-  <li> <a href="Showadmin.php">Edit Profile</a> </li>
-  <li> <a href="Showadmin.php">Change Password</a> </li>
-  <li> <a href="../../Controller/LogoutAction.php">Logout</a> </li>
+  <li> <a href="../../Controller/Admin/LogoutAction.php">Logout</a> </li>
 </ul> 
 </td>
 
