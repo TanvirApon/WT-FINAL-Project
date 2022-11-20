@@ -25,11 +25,11 @@
     $stmt->execute();
     $stmt->bind_result($email, $password);
     $stmt->store_result();
-    if($stmt->num_rows == 1)  //To check if the row exists
+    if($stmt->num_rows == 1)  
         {
-            while($stmt->fetch()) //fetching the contents of the row
+            while($stmt->fetch()) 
 
-              {$_SESSION['Logged'] = 1;
+              {
                $_SESSION['email'] = $email;
                header("Location:../../View/Admin/Dashboard.php");
                exit();
