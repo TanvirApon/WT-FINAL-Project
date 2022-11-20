@@ -1,4 +1,17 @@
+<?php
+ session_start();
 
+if(isset($_SESSION['email']))
+{
+	
+	
+}
+else
+{
+	header("Location:Login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +28,7 @@
 </tr>
 
 <tr>
-	<td><?php include "Nav.php"; ?></td>
+	<td> </td>
 </tr>
 
 <tr>

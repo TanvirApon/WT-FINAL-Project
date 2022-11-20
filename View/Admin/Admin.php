@@ -1,4 +1,19 @@
+<?php
+ session_start();
 
+if(isset($_SESSION['email']))
+{
+
+	
+}
+else
+{
+	header("Location:../View/Login.php");
+}
+
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +31,12 @@
 </tr>
 
 <tr>
-	<td><?php include "Nav.php"; ?></td>
+	<td><div align="center">
+       <a href="About.php"> Employee |</a>
+       <a href="../Seller/AddProduct.php"> Product |</a>
+       <a href="Seller.php"> Seller</a>
+       <br>
+</div> </td>
 </tr>
 
 <tr>
